@@ -21,7 +21,7 @@ const Appointment = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const result = await axios.get('http://localhost:5000/show');
+        const result = await axios.get('https://raify-live.onrender.com/show');
         setAppointments(result.data.appointments);
       } catch (error) {
         console.error('Error fetching appointments:', error);
@@ -45,7 +45,7 @@ const Appointment = () => {
       toast.error("Please fill all the Feilds")
     }
     try {
-      const response = await axios.post('http://localhost:5000/Appoinment', {
+      const response = await axios.post('https://raify-live.onrender.com/Appoinment', {
         name: data.name,
         phone_number: data.phone_number,
         date: data.date,
